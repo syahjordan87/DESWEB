@@ -1,0 +1,9 @@
+[
+    { "judul": "Laskar Pelangi", "pengarang": "Andrea Hirata", "tahun": 2005, "stok": 4 },
+    { "judul": "3125 MDP", "pengarang": "Pramoedya Ananta Toer", "tahun": 1980, "stok": 2 },
+    { "judul": "Negeri 5 Menara", "pengarang": "Ahmad Fuadi", "tahun": 2009, "stok": 0 },
+    { "judul": "Dilan: Dia adalah Dilanku Tahun 1990", "pengarang": "Henry Manampiring", "tahun": 2018, "stok": 5 },
+    { "judul": "The Fault in Our Stars", "pengarang": "Ahmad Tohari", "tahun": 1982, "stok": 1 },
+    { "judul": "Filosofi Kopi", "pengarang": "Dewi Lestari", "tahun": 2006, "stok": 10 },
+    { "judul": "Si Juki", "pengarang": "Eka Kurniawan", "tahun": 2002, "stok": 7 }
+]
