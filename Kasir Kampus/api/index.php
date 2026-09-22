@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/includes/koneksi.php';
+require __DIR__ . '/../includes/koneksi.php';
 
 $page_title = "Beranda";
 $base_url = "";
@@ -17,7 +17,7 @@ $totalPelanggan = $pdo->query("
     FROM public.pelanggan
 ")->fetchColumn();
 
-require __DIR__ . '/includes/header.php';
+require __DIR__ . '/../includes/header.php';
 
 ?>
 
