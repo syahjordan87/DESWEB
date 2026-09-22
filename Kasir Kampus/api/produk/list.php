@@ -5,8 +5,8 @@ session_start();
 $page_title = "Daftar Produk";
 $base_url = "../";
 
-require __DIR__ . '/../includes/koneksi.php';
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/koneksi.php';
+require __DIR__ . '/../../includes/header.php';
 
 $stmt = $pdo->query("
     SELECT id, nama, kategori, harga, stok
@@ -117,4 +117,4 @@ $produk = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </section>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>
