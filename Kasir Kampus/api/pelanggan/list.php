@@ -1,6 +1,6 @@
 <?php
 $page_title = "Daftar Pelanggan";
-include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../../includes/header.php';
 $pelanggan = $_SESSION['pelanggan'] ?? [];
 ?>
 <section>
@@ -31,4 +31,4 @@ $pelanggan = $_SESSION['pelanggan'] ?? [];
     </div>
     <?php endif; ?>
 </section>
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>
