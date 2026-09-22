@@ -3,7 +3,7 @@
 // Menggantikan tambah.php + proses_tambah.php lama (proses_tambah.php dihapus)
 
 session_start();
-require __DIR__ . '/../includes/koneksi.php';
+require __DIR__ . '/../../includes/koneksi.php';
 
 $page_title = "Tambah Produk";
 $base_url = "../";
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // ==== GET: tampilkan form ====
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/header.php';
 ?>
 
 <section>
@@ -123,4 +123,4 @@ require __DIR__ . '/../includes/header.php';
 
 </section>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>
