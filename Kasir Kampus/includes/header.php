@@ -6,14 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $page_title = $page_title ?? 'KASIR KAMPUS';
 
-$is_local = isset($_SERVER['HTTP_HOST']) &&
-    (
-        str_contains($_SERVER['HTTP_HOST'], 'localhost') ||
-        str_contains($_SERVER['HTTP_HOST'], '127.0.0.1')
-    );
-
-$base_path = $is_local ? '/kasir_kampus' : '';
-
 ?>
 
 <!DOCTYPE html>
@@ -25,15 +17,9 @@ $base_path = $is_local ? '/kasir_kampus' : '';
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        <?= htmlspecialchars($page_title) ?> | KASIR KAMPUS
-    </title>
+    <title><?= htmlspecialchars($page_title) ?> | KASIR KAMPUS</title>
 
-    <!-- CSS -->
-    <link
-        rel="stylesheet"
-        href="<?= $base_path ?>/assets/css/style.css"
-    >
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1">
 
 </head>
 
@@ -48,33 +34,23 @@ $base_path = $is_local ? '/kasir_kampus' : '';
         <ul>
 
             <li>
-                <a href="<?= $base_path ?>/index.php">
-                    Beranda
-                </a>
+                <a href="/index.php">Beranda</a>
             </li>
 
             <li>
-                <a href="<?= $base_path ?>/produk/list.php">
-                    Daftar Produk
-                </a>
+                <a href="/produk/list.php">Daftar Produk</a>
             </li>
 
             <li>
-                <a href="<?= $base_path ?>/produk/tambah.php">
-                    Tambah Produk
-                </a>
+                <a href="/produk/tambah.php">Tambah Produk</a>
             </li>
 
             <li>
-                <a href="<?= $base_path ?>/pelanggan/list.php">
-                    Daftar Pelanggan
-                </a>
+                <a href="/pelanggan/list.php">Daftar Pelanggan</a>
             </li>
 
             <li>
-                <a href="<?= $base_path ?>/pelanggan/tambah.php">
-                    Tambah Pelanggan
-                </a>
+                <a href="/pelanggan/tambah.php">Tambah Pelanggan</a>
             </li>
 
         </ul>
