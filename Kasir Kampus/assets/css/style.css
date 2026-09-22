@@ -1,0 +1,449 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.main-header {
+    width: 100%;
+    background: linear-gradient(90deg, #117c78, #17647b);
+    color: white;
+    padding: 32px 6%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   JUDUL HEADER
+========================================= */
+
+.main-header h1 {
+    margin: 0 0 30px 0;
+    padding: 0;
+
+    color: white;
+
+    font-size: 40px;
+    font-weight: bold;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.main-nav {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 40px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+
+    flex-wrap: nowrap;
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    line-height: 1.5;
+
+    transition: opacity 0.2s ease;
+}
+
+.main-nav a:hover {
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 40px auto;
+
+    min-height: 500px;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+section {
+    background: white;
+
+    padding: 32px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 30px;
+}
+
+section h2 {
+    margin-top: 0;
+
+    color: #117c78;
+
+    font-size: 30px;
+}
+
+
+/* =========================================
+   DASHBOARD / STAT CARD
+========================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+.stat-card {
+    background: linear-gradient(
+        135deg,
+        #117c78,
+        #17647b
+    );
+
+    color: white;
+
+    border-radius: 14px;
+
+    padding: 28px;
+
+    min-height: 160px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 20px;
+
+    color: white;
+}
+
+.stat-card p {
+    margin: 0;
+
+    font-size: 36px;
+
+    font-weight: bold;
+
+    color: white;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+form {
+    max-width: 650px;
+}
+
+form p {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #117c78;
+
+    box-shadow: 0 0 0 3px rgba(17, 124, 120, 0.12);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+    border: none;
+
+    background: #117c78;
+
+    color: white;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d6965;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-responsive {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+thead {
+    background: #117c78;
+
+    color: white;
+}
+
+th,
+td {
+    padding: 14px 16px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* =========================================
+   TOMBOL EDIT / HAPUS
+========================================= */
+
+.btn-edit,
+.btn-hapus {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    color: white;
+
+    margin-right: 5px;
+}
+
+.btn-edit {
+    background: #2563eb;
+}
+
+.btn-hapus {
+    background: #dc2626;
+}
+
+.btn-edit:hover {
+    opacity: 0.85;
+}
+
+.btn-hapus:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   ALERT
+========================================= */
+
+.alert {
+    padding: 12px 16px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    max-width: 400px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    margin-top: 50px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #172033;
+
+    color: white;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .main-nav a {
+        font-size: 17px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .main-header {
+        padding: 25px 6%;
+    }
+
+    .main-header h1 {
+        font-size: 30px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .main-nav a {
+        font-size: 16px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    section {
+        padding: 22px;
+    }
+
+    .stat-card {
+        min-height: 140px;
+
+        padding: 22px;
+    }
+}
