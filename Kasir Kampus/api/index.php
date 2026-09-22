@@ -17,7 +17,7 @@ $totalPelanggan = $pdo->query("
     FROM public.pelanggan
 ")->fetchColumn();
 
-require __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../includes/header.php';
 
 ?>
 
