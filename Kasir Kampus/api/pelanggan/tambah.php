@@ -8,7 +8,7 @@
 session_start();
 
 $page_title = "Tambah Pelanggan";
-$base_url = "../";
+$base_url = "../../";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
