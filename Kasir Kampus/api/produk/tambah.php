@@ -1,12 +1,61 @@
 <?php
+// Path di repo: Kasir Kampus/api/produk/tambah.php
+// Menggantikan tambah.php + proses_tambah.php lama (proses_tambah.php dihapus)
 
 session_start();
+require __DIR__ . '/../includes/koneksi.php';
 
 $page_title = "Tambah Produk";
 $base_url = "../";
 
-require __DIR__ . '/../includes/header.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    $nama     = trim($_POST['nama'] ?? '');
+    $kategori = trim($_POST['kategori'] ?? '');
+    $harga    = $_POST['harga'] ?? '';
+    $stok     = $_POST['stok'] ?? '';
+
+    if (
+        $nama === '' ||
+        $kategori === '' ||
+        !is_numeric($harga) || $harga < 0 ||
+        !is_numeric($stok) || $stok < 0
+    ) {
+        $_SESSION['flash'] = 'Data produk tidak valid.';
+        header('Location: tambah.php');
+        exit;
+    }
+
+    try {
+
+        $stmt = $pdo->prepare("
+            INSERT INTO public.produk
+            (nama, kategori, harga, stok)
+            VALUES
+            (:nama, :kategori, :harga, :stok)
+        ");
+
+        $stmt->execute([
+            ':nama'     => $nama,
+            ':kategori' => $kategori,
+            ':harga'    => $harga,
+            ':stok'     => $stok
+        ]);
+
+        $_SESSION['flash'] = 'Produk berhasil ditambahkan ke database.';
+        header('Location: list.php');
+        exit;
+
+    } catch (PDOException $e) {
+
+        $_SESSION['flash'] = 'Gagal menambahkan produk: ' . $e->getMessage();
+        header('Location: tambah.php');
+        exit;
+    }
+}
+
+// ==== GET: tampilkan form ====
+require __DIR__ . '/../includes/header.php';
 ?>
 
 <section>
@@ -23,7 +72,7 @@ require __DIR__ . '/../includes/header.php';
 
     <?php endif; ?>
 
-    <form method="POST" action="proses_tambah.php">
+    <form method="POST" action="tambah.php">
 
         <p>
             <label for="nama">Nama Produk</label>
