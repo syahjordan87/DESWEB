@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // ==== GET: tampilkan form ====
-require __DIR__ . '/../includes/header.php';
+require __DIR__ . '/../../includes/header.php';
 ?>
 
 <section>
@@ -65,4 +65,4 @@ require __DIR__ . '/../includes/header.php';
 
 </section>
 
-<?php require __DIR__ . '/../includes/footer.php'; ?>
+<?php require __DIR__ . '/../../includes/footer.php'; ?>
