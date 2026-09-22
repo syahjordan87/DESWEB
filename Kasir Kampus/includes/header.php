@@ -11,7 +11,7 @@ $page_title = $page_title ?? 'KASIR KAMPUS';
 <!DOCTYPE html>
 <html lang="id">
 
-<head>
+<<head>
 
     <meta charset="UTF-8">
 
@@ -19,7 +19,7 @@ $page_title = $page_title ?? 'KASIR KAMPUS';
 
     <title><?= htmlspecialchars($page_title) ?> | KASIR KAMPUS</title>
 
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=1">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 
