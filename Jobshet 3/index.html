@@ -1,52 +1,325 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS | Beranda</title>
-    <link rel="stylesheet" href="../Assets/css/style.css">
+    <title>SIMPUS-Mini | Beranda</title>
+
+    <style>
+        /* Palet warna */
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #155e75;
+            --background: #f1f5f9;
+            --surface: #ffffff;
+            --surface-soft: #ecfeff;
+            --border: #99f6e4;
+            --text: #1e293b;
+            --muted: #64748b;
+            --shadow: 0 5px 15px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Navbar menggunakan Flexbox */
+        header {
+            min-height: 80px;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: linear-gradient(
+                110deg,
+                var(--primary),
+                var(--primary-dark)
+            );
+            color: white;
+            box-shadow: 0 3px 8px rgba(15, 23, 42, 0.18);
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Konten utama */
+        main {
+            width: min(1046px, calc(100% - 40px));
+            margin: 35px auto 0;
+        }
+
+        .panel {
+            background: var(--surface);
+            border-radius: 14px;
+            padding: 30px 27px;
+            margin-bottom: 26px;
+            box-shadow: var(--shadow);
+        }
+
+        .welcome h2,
+        .summary h2 {
+            color: var(--primary);
+            font-size: 26px;
+            line-height: 1.35;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            font-size: 17px;
+        }
+
+        /* CSS Grid untuk kartu statistik */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .stat-card {
+            min-height: 128px;
+            padding: 20px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: linear-gradient(
+                135deg,
+                var(--surface-soft),
+                #f0fdfa
+            );
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(15, 118, 110, 0.12);
+        }
+
+        .stat-card h3 {
+            color: #475569;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .stat-number {
+            color: var(--primary);
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            padding: 37px 15px 28px;
+        }
+
+        /* Responsive untuk tablet */
+        @media (max-width: 900px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Responsive untuk HP */
+        @media (max-width: 650px) {
+            header {
+                padding: 18px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .nav-toggle-label {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            .nav-toggle:checked ~ nav {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding-top: 10px;
+            }
+
+            main {
+                width: calc(100% - 28px);
+                margin-top: 22px;
+            }
+
+            .panel {
+                padding: 23px 20px;
+                margin-bottom: 20px;
+            }
+
+            .welcome h2,
+            .summary h2 {
+                font-size: 22px;
+            }
+
+            .welcome p {
+                font-size: 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 13px;
+            }
+
+            .stat-card {
+                min-height: 105px;
+            }
+
+            footer {
+                padding-top: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+
     <header>
-        <h1>SIMPUS</h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
-        <nav>
+        <h1>SIMPUS-Mini</h1>
+
+        <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            aria-label="Buka atau tutup menu"
+        >
+
+        <label
+            for="nav-toggle"
+            class="nav-toggle-label"
+            aria-label="Menu navigasi"
+        >&#9776;</label>
+
+        <nav aria-label="Navigasi utama">
             <ul>
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="buku/list.html">Daftar Buku</a></li>
-                <li><a href="buku/tambah.html">Tambah Buku</a></li>
-                <li><a href="anggota/list.html">Daftar Anggota</a></li>
-                <li><a href="anggota/tambah.html">Tambah Anggota</a></li>
+                <li><a href="Buku/List.html">Daftar Buku</a></li>
+                <li><a href="Buku/Tambah.html">Tambah Buku</a></li>
+                <li><a href="Anggota/List.html">Daftar Anggota</a></li>
+                <li><a href="Anggota/Tambah.html">Tambah Anggota</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section class="panel welcome">
             <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
-            <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
+
+            <p>
+                Aplikasi sederhana untuk mengelola data buku
+                dan anggota perpustakaan.
+            </p>
         </section>
 
-        <section>
+        <section class="panel summary">
             <h2>Ringkasan</h2>
-            <article>
-                <h3>Total Buku</h3>
-                <p>12</p>
-            </article>
-            <article>
-                <h3>Total Anggota</h3>
-                <p>8</p>
-            </article>
-            <article>
-                <h3>Sedang Dipinjam</h3>
-                <p>3</p>
-            </article>
+
+            <div class="stats">
+                <article class="stat-card">
+                    <h3>Total Buku</h3>
+                    <p class="stat-number">12</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Total Anggota</h3>
+                    <p class="stat-number">8</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Sedang Dipinjam</h3>
+                    <p class="stat-number">3</p>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 SIMPUS &mdash; Jobsheet 3</p>
+        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 3</p>
     </footer>
+
+    <script>
+        // JavaScript dasar untuk interaktivitas menu navigasi.
+        const navToggle = document.getElementById("nav-toggle");
+        const navLinks = document.querySelectorAll("nav a");
+
+        // Menutup menu setelah salah satu tautan dipilih.
+        navLinks.forEach(function(link) {
+            link.addEventListener("click", function() {
+                navToggle.checked = false;
+            });
+        });
+    </script>
+
 </body>
 </html>
